@@ -1,10 +1,16 @@
 #!/bin/bash
+cd lexpredict_openedgar
+
+source .env
+
 echo "Building migrations"
-python kernel-api/manage.py migrateall
+python manage.py makemigrations
 
 echo "Applying database migrations"
-python kernel-api/manage.py migrateall
+python manage.py migrate
 
+# echo "Starting tika"
+# bash ../tika/run_tika.sh &
 
-echo "Starting server"
-python kernel-api/manage.py runserver 0.0.0.0:8000
+echo "Starting celery"
+celery -A lexpredict_openedgar.taskapp worker --loglevel=INFO -f celery.log -c16

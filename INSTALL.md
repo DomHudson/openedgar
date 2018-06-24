@@ -2,8 +2,18 @@
 ## Setup and Installation Guide
 
 OpenEDGAR is designed to be run on Amazon Web Services to provide high-quality, reliable 
-Internet access and intra-DC access to Amazon S3 for storage.  While users can run OpenEDGAR from outside of AWS, 
-an AWS account is required for S3 usage and performance will be substantially reduced. 
+Internet access and intra-DC access to Amazon S3 for storage.  While users can run OpenEDGAR from outside of AWS, an AWS account is required for S3 usage and performance will be substantially reduced.
+
+### Installation with Docker
+
+1. Install docker
+
+2. Start services
+```bash
+docker-compose up
+```
+
+### Installation without Docker 
 
 #### Server Setup
 
