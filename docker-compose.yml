@@ -25,3 +25,5 @@ services:
     depends_on:
       - rabbit
       - db
+    environment:
+      C_FORCE_ROOT: 1

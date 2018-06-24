@@ -10,4 +10,4 @@ python manage.py migrate
 # bash ../tika/run_tika.sh &
 
 echo "Starting celery"
-celery -A lexpredict_openedgar.taskapp worker --loglevel=INFO -f celery.log -c16
+celery -A lexpredict_openedgar.taskapp worker --loglevel=INFO -c16
