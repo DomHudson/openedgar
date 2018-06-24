@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  rabbit:
+    image: rabbitmq:3.7.6-alpine
+    restart: always
+
+  db:
+    image: postgres:10.4-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: openedgar
+      POSTGRES_PASSWORD: openedgar
+      POSTGRES_DB: openedgar
+
+  openedgar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - environment.env
+    working_dir: /usr/src/app
+    command: bash docker-entrypoint.sh
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbit
+      - db
