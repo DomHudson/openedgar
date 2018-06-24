@@ -160,9 +160,7 @@ docker-compose up
     
     c. `$ source .env`
     
-    d. `$ python manage.py makemigrations`
-    
-    e. `$ python manage.py migrate`
+    d. `$ python manage.py migrate`
 
 16. Setup Apache Tika and run
 
