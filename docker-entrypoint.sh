@@ -3,9 +3,6 @@ cd lexpredict_openedgar
 
 source .env
 
-echo "Building migrations"
-python manage.py makemigrations
-
 echo "Applying database migrations"
 python manage.py migrate
 
